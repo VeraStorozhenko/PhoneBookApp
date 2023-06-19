@@ -1,0 +1,10 @@
+<h1><%= @contact.first_name %></h1>
+<p><%= @contact.last_name %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_contact_path(@contact) %></li>
+  <li><%= link_to "Destroy", contact_path(@contact), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>
