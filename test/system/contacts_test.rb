@@ -11,12 +11,12 @@ class ContactsTest < ApplicationSystemTestCase
 
     click_on "+ Add Contact"
 
-    fill_in "first_name", with: "Peter"
-    fill_in "last_name", with: "Pen"
-    fill_in "telephone", with: "321"
+    fill_in "contact_first_name", with: "Peter"
+    fill_in "contact_last_name", with: "Pen"
+    fill_in "contact_telephone", with: "321"
 
     click_on "Add Contact"
 
-    assert redirect_to contacts_path
+    page.status_code.should == 302
   end
 end
